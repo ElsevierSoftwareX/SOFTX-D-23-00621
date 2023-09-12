@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://iva.furiouskoalas.com/schemas/clickable-regions-vc.schema.json",
+  "title": "Clickable Regions Video Component (VC)",
+  "description": "Displays up to N clickable regions on the video",
+  "type": "object",
+  "required": ["nature", "clickable-regions-vc"],
+  "properties": {
+    "nature": {
+      "description": "The internal nature of this VC",
+      "type": "string",
+      "const": "clickable-regions-vc"
+    },
+    "clickable-regions-vc": {
+      "description": "The actual behavior of this VC",
+      "type": "object",
+      "required": ["regions"],
+      "properties": {
+        "regions": {
+          "description": "The list of clickable regions to display",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["points", "onSelect", "correct"],
+            "properties": {
+              "points": {
+                "description": "The list of points defining this region; requires a minimum of 3 points to define it",
+                "type": "array",
+                "minItems": 3,
+                "uniqueItems": true,
+                "items": {
+                  "description": "A (X,Y) coordinate whose axes have been normalized to [0,100]",
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": {
+                    "description": "A percentage value between 0.0 and 100.0",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  }
+                }
+              },
+              "onSelect": {
+                "description": "The millisecond to jump to in the video once the user has clicked on the region",
+                "type": "integer",
+                "minimum": 0
+              },
+              "correct": {
+                "description": "Specifies if the current answer is correct or not (just for metrics purpose)",
+                "type": "boolean"
+              },
+              "styles": {
+                "description": "A set of styles to apply to this VC",
+                "type": "object",
+                "minProperties": 1,
+                "properties": {
+                  "default": {
+                    "description": "CSS styles applied by default to this element",
+                    "type": "object",
+                    "minProperties": 1
+                  },
+                  "hover": {
+                    "description": "CSS styles applied only when this element is hovered/focused/active",
+                    "type": "object",
+                    "minProperties": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

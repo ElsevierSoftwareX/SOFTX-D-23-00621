@@ -1,0 +1,25 @@
+.info-panel-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 30;
+
+    .holder {
+        width: inherit;
+        height: inherit;
+        transition: transform 0.2s ease-out;
+
+        &.show-panel {
+            transform: translateX(0);
+            transition: transform 0.2s ease-out;
+        }
+
+        &.hide-panel {
+            // Transform must be overriden inline
+            // depending on icon and panel widths
+            transition: transform 0.2s ease-out;
+        }
+    }
+}

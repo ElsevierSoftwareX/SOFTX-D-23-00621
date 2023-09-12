@@ -1,0 +1,50 @@
+@import "~video.js/dist/video-js.css";
+
+.player-wrapper {
+  position: relative;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+.video-js .vjs-tech {
+  // Fix it to be really responsive
+  position: relative !important;
+  max-width: 80vw;
+  transition: max-width 0.3s ease-out;
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+}
+
+.video-focus {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.75);
+  transition: box-shadow 1s ease-out;
+}
+
+.player-wrapper-fs {
+  position: absolute;
+  width: 100vw;
+  height: 56.25vw;
+  max-height: 100vh;
+  max-width: 177.78vh;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.video-js-fs {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+
+  .vjs-tech {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+.hide {
+  display: none;
+}

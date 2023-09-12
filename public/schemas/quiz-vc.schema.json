@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://iva.furiouskoalas.com/schemas/quiz-vc.schema.json",
+  "title": "Quiz Video Component (VC)",
+  "description": "Displays a quiz with up to N answers for the user to choose",
+  "type": "object",
+  "required": ["nature", "quiz-vc"],
+  "properties": {
+    "nature": {
+      "description": "The internal nature of this VC",
+      "type": "string",
+      "const": "quiz-vc"
+    },
+    "quiz-vc": {
+      "description": "The actual behavior of this VC",
+      "type": "object",
+      "required": ["question", "choices"],
+      "properties": {
+        "question": {
+          "description": "The text for the actual question asked to the user",
+          "type": "string"
+        },
+        "choices": {
+          "description": "The list of answers from which the user can choose",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["answer", "correct", "onSelect"],
+            "properties": {
+              "answer": {
+                "description": "The text for an answer that can be chosen by the user",
+                "type": "string"
+              },
+              "correct": {
+                "description": "Specifies if the current answer is correct or not (just for metrics purpose)",
+                "type": "boolean"
+              },
+              "onSelect": {
+                "description": "The millisecond to jump to in the video once the user has chosen this answer",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

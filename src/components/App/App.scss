@@ -1,0 +1,33 @@
+$primary-color: #282c34;
+$secondary-color: #bdbdbd;
+$gradient-color: #4f4f4f;
+
+.App {
+  text-align: center;
+  background: radial-gradient(ellipse at center, $gradient-color 0%, $primary-color 100%);
+  background-color: $primary-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+
+  &.fade-bg {
+    background: none;
+    background-color: darken($primary-color, 10%);
+    transition: background-color 1.5s ease-out;
+  }
+}
+
+.App-manual-input {
+  h2 {
+    color: $secondary-color;
+  }
+
+  input {
+    font-size: 1.5em;
+    text-align: center;
+    width: 80%;
+  }
+}

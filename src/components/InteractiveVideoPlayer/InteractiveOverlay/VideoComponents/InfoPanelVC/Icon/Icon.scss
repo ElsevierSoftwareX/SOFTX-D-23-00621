@@ -1,0 +1,35 @@
+.icon {
+  position: absolute;
+  height: auto;
+  width: 10%;
+  // calc be like: panelWidth - iconWidth / 2
+  right: calc(33% - 10% / 2);
+  top: 20%;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.2s ease-out;
+  pointer-events: auto;
+
+  &.icon-show {
+    animation: pulse .5s infinite alternate ease-out;
+  }
+
+  &.icon-hide {
+    animation: none;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-out;
+    animation: none;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

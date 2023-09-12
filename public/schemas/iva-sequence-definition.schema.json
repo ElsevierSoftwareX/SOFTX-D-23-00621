@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://iva.furiouskoalas.com/schemas/iva-sequence-definition.schema.json",
+  "title": "IVA Sequence Definition (ISD)",
+  "description": "Validates ISD files",
+  "type": "object",
+  "required": ["version", "components", "sequence"],
+  "properties": {
+    "version": {
+      "description": "The current version of the API used by the ISD file",
+      "type": "integer",
+      "const": 1
+    },
+    "components": {
+      "description": "The Video Components (VC) used in the ISD file",
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "$ref": "http://iva.furiouskoalas.com/schemas/jump-vc.schema.json"
+          },
+          {
+            "$ref": "http://iva.furiouskoalas.com/schemas/quiz-vc.schema.json"
+          },
+          {
+            "$ref": "http://iva.furiouskoalas.com/schemas/clickable-regions-vc.schema.json"
+          },
+          {
+            "$ref": "http://iva.furiouskoalas.com/schemas/info-panel-vc.schema.json"
+          }
+        ]
+      }
+    },
+    "sequence": {
+      "description": "The timeline where the previous defined VC will be used",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["start", "end", "component"],
+        "properties": {
+          "start": {
+            "description": "The millisecond when this VC will appear on the video",
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "description": "The millisecond when this VC will disappear from the video",
+            "type": "integer",
+            "minimum": 0
+          },
+          "component": {
+            "description": "The name of the VC to show, i.e., a key from the 'components' object",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

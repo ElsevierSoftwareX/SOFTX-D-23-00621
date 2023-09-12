@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://iva.furiouskoalas.com/schemas/jump-vc.schema.json",
+  "title": "Jump Video Component (VC)",
+  "description": "Allows the player to skip to the specified millisecond in the video",
+  "type": "object",
+  "required": ["nature", "jump-vc"],
+  "properties": {
+    "nature": {
+      "description": "The internal nature of this VC",
+      "type": "string",
+      "const": "jump-vc"
+    },
+    "jump-vc": {
+      "description": "The actual behavior of this VC",
+      "type": "object",
+      "required": ["to", "repeat"],
+      "properties": {
+        "to": {
+          "description": "The millisecond to jump to in the video",
+          "type": "integer",
+          "minimum": 0
+        },
+        "repeat": {
+          "description": "The number of times this jump should happen: -1 -> forever; >= 0 -> the number of repetitions",
+          "type": "integer",
+          "minimum": -1
+        }
+      }
+    }
+  }
+}

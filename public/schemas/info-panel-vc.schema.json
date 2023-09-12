@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://iva.furiouskoalas.com/schemas/info-panel-vc.schema.json",
+  "title": "Info Panel Video Component (VC)",
+  "description": "Shows an informative panel with content from an external URL",
+  "type": "object",
+  "required": ["nature", "info-panel-vc"],
+  "properties": {
+    "nature": {
+      "description": "The internal nature of this VC",
+      "type": "string",
+      "const": "info-panel-vc"
+    },
+    "info-panel-vc": {
+      "description": "The actual behavior of this VC",
+      "type": "object",
+      "required": ["content", "side", "pause"],
+      "properties": {
+        "content": {
+          "description": "An URL which content will be embedded into this informative panel",
+          "type": "string"
+        },
+        "side": {
+          "description": "The side in the video (left or right) from which this informative panel will appear",
+          "type": "string",
+          "enum": ["left", "right"]
+        },
+        "pause": {
+          "description": "Whether the video has to be paused when the informative panel is displayed or not",
+          "type": "boolean"
+        },
+        "iconShow": {
+          "description": "A PNG image encoded as a base64 URI to show when this informative panel is hidden",
+          "type": "string",
+          "contentEncoding": "base64",
+          "contentMediaType": "image/png"
+        },
+        "iconHide": {
+          "description": "A PNG image encoded as a base64 URI to show when this informative panel is displayed",
+          "type": "string",
+          "contentEncoding": "base64",
+          "contentMediaType": "image/png"
+        },
+        "styles": {
+          "description": "A set of styles to apply to this VC",
+          "type": "object",
+          "minProperties": 1,
+          "properties": {
+            "panel": {
+              "description": "CSS styles applied to the informative panel",
+              "type": "object",
+              "minProperties": 1,
+              "properties": {
+                "default": {
+                  "description": "CSS styles applied by default to this element",
+                  "type": "object",
+                  "minProperties": 1
+                }
+              }
+            },
+            "icon": {
+              "description": "CSS styles applied to the show/hide icon of this informative panel",
+              "type": "object",
+              "minProperties": 1,
+              "properties": {
+                "default": {
+                  "description": "CSS styles applied by default to this element",
+                  "type": "object",
+                  "minProperties": 1
+                },
+                "hover": {
+                  "description": "CSS styles applied only when this element is hovered/focused/active",
+                  "type": "object",
+                  "minProperties": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
