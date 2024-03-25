@@ -5,6 +5,9 @@ import React from "react";
 import c from "../../../../constants";
 import "./ClickableRegion.scss";
 
+/**
+ * Component that renders a single interactive clickable region on the video.
+ */
 export default function ClickableRegion({ styles, onSelect, correct, actions, videoSize, points }) {
   const Region = styled.polygon`
     ${styles && styles.default}

@@ -5,6 +5,9 @@ import { matchPath, useLocation, useNavigate, useParams } from "react-router-dom
 import InteractiveVideoPlayer from "../InteractiveVideoPlayer";
 import "./App.scss";
 
+/**
+ * Main component of the application.
+ */
 class App extends Component {
   static propTypes = {
     params: PropTypes.shape({

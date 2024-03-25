@@ -5,6 +5,9 @@ import QuizChoice from "./QuizChoice";
 import QuizQuestion from "./QuizQuestion";
 import "./QuizVC.scss";
 
+/**
+ * Component that renders a quiz question and its choices.
+ */
 export default class QuizVC extends React.Component {
   // Force this component to has that nature
   static nature = "quiz-vc";

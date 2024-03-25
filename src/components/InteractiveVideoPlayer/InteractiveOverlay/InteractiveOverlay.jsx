@@ -5,6 +5,9 @@ import { Settings } from "../index";
 import "./InteractiveOverlay.scss";
 import VideoComponentFactory from "./VideoComponents";
 
+/**
+ * Component that renders the interactive overlay on top of the video player.
+ */
 export default class InteractiveOverlay extends React.Component {
   static propTypes = {
     actions: PropTypes.shape({

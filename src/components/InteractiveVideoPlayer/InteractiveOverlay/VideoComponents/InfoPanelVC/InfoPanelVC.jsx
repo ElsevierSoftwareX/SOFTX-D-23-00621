@@ -7,6 +7,9 @@ import Icon from "./Icon";
 import "./InfoPanelVC.scss";
 import Panel from "./Panel";
 
+/**
+ * Component that renders an informative panel.
+ */
 export default class InfoPanelVC extends React.Component {
   // Force this component to has that nature
   static nature = "info-panel-vc";

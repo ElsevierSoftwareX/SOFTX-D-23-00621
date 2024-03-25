@@ -4,12 +4,15 @@ import PubSub from "pubsub-js";
 import React, { StrictMode } from "react";
 import ReactGA from "react-ga";
 import videojs from "video.js";
-import c from "./constants";
-import { Logger } from "./helpers";
 import InteractiveOverlay from "./InteractiveOverlay";
 import "./InteractiveVideoPlayer.scss";
 import PlayOverlay from "./PlayOverlay";
+import c from "./constants";
+import { Logger } from "./helpers";
 
+/**
+ * Component that renders an interactive video player using Video.js as the video player.
+ */
 export default class InteractiveVideoPlayer extends React.Component {
   static propTypes = {
     isFullScreenVideo: PropTypes.bool.isRequired,

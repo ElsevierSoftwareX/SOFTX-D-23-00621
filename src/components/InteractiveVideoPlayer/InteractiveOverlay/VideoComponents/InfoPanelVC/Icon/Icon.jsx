@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import React from "react";
 import "./Icon.scss";
 
+/**
+ * Component that renders an icon on the informative panel.
+ */
 export default function Icon({ panelWidth, iconWidth, side, styles, onClick, image, imageCustomClass }) {
   let cssForSide = {
     right: `calc(${panelWidth} - ${iconWidth} / 2);`,

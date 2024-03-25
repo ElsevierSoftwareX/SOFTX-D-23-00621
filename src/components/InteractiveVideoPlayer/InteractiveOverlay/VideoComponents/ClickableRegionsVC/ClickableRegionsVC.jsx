@@ -4,6 +4,9 @@ import { Logger } from "../../../helpers";
 import ClickableRegion from "./ClickableRegion";
 import "./ClickableRegionsVC.scss";
 
+/**
+ * Component that renders a list of interactive clickable regions on the video.
+ */
 export default class ClickableRegionsVC extends React.Component {
   // Force this component to has that nature
   static nature = "clickable-regions-vc";

@@ -3,6 +3,9 @@ import React from "react";
 import { Logger } from "../../../helpers";
 import "./JumpVC.scss";
 
+/**
+ * Component that jumps the player's playback to a specific time.
+ */
 export default class JumpVC extends React.Component {
   // Force this component to has that nature
   static nature = "jump-vc";

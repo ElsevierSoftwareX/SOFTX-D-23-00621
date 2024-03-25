@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import NotFound from "./NotFound";
 
+/**
+ * Component that handles the routing of the application.
+ */
 export default function Router() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>

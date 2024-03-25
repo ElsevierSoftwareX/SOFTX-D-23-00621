@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 import React from "react";
 import "./PlayOverlay.scss";
 
+/**
+ * Functional component that renders a play or pause icon based on the isPlaying prop.
+ */
 export default function PlayOverlay({ isPlaying, onClick }) {
   return (
     <div className={`play-overlay ${!isPlaying && "fade-overlay"}`}>

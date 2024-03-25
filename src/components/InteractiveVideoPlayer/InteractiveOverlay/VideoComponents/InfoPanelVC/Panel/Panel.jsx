@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import React from "react";
 import "./Panel.scss";
 
+/**
+ * Component that renders the container for the informative panel.
+ */
 function Panel({ side, styles, content }) {
   let cssForSide = { right: 0 };
   if (side === "left") {

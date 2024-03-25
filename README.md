@@ -12,6 +12,34 @@
 
 ## Development
 
+### Main libraries
+
+- react: a JavaScript library for building user interfaces with reusable components.
+- react-ga: a module for integrating Google Analytics in React applications, facilitating the tracking of user interactions.
+- video.js: an library for building web video players with HTML5. Supports customization and cross-browser compatibility.
+- pubsub-js: a lightweight publish/subscribe messaging library to decouple different parts of the application, enhancing code scalability.
+- js-yaml: a JavaScript library for parsing and dumping YAML, used during ISD files parsing.
+
+### Directory organisation
+
+```bash
+─ public # Static files for the website of the application
+  └── schemas # JSON schemas to validate ISD files
+─ scripts # Some utility scripts
+─ src
+  └── components
+      ├── App # Main entry point of the application
+      ├── InteractiveVideoPlayer # Parent component for the interactive video player
+      │   ├── InteractiveOverlay # Component to display all the interactive components over the video
+      │   │   └── VideoComponents # All the interactive video components live here
+      │   │       ├── ClickableRegionsVC # Component for interactive regions
+      │   │       ├── InfoPanelVC # Component for informative panels
+      │   │       ├── JumpVC # Component to skip to any millisecond
+      │   │       └── QuizVC # Component for the quizzes
+      │   └── PlayOverlay # Component to overlay the play/pause buttons
+      └── NotFound # Not found page
+```
+
 ### Dependencies
 
 - Docker:
